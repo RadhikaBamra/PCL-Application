@@ -21,7 +21,7 @@ const IntroductionPage = () => {
         <div className="context-left">
           <div className="logo">
             <img src={assets.logo} alt="" className="logo-img" />
-            <div className="logo-text">PCB</div>
+            <div className="logo-text">PCL</div>
           </div>
           <div className="text">Pollution Control Lab</div>
           <div className="start">
