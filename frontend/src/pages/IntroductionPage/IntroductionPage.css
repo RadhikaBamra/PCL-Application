@@ -1,0 +1,171 @@
+body {
+  background-color: #b9cef0;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.introPageImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.08;
+  z-index: -1;
+}
+
+.context {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 15vw;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 25%;
+  padding-right: 20%;
+  gap: 20%;
+}
+
+.logo-text {
+  font-size: 54px;
+  font-weight: 700;
+  color: #1d2c4d;
+}
+
+.context-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.logo-img {
+  width: 80px;
+}
+
+.text {
+  font-size: 40px;
+  font-weight: 700;
+  color: #1d2c4d;
+  padding: 30px;
+}
+
+.start {
+  display: flex;
+  padding-left: 38%;
+}
+
+.start-btn {
+  background-color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.start-btn:hover {
+  background-color: #1d2c4d;
+  color: white;
+  text-decoration: underline;
+  align-items: center;
+}
+
+.context-right {
+  max-width: 50%;
+  font-size: 25px;
+  color: #1d2c4d;
+  line-height: 1.6;
+}
+/* Tablet */
+@media (max-width: 1024px) {
+  .context {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8vw;
+    text-align: center;
+    height: auto;
+  }
+
+  .context-left,
+  .context-right {
+    align-items: center;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    justify-content: center;
+    padding: 0;
+    gap: 10%;
+  }
+
+  .logo-text {
+    font-size: 40px;
+  }
+
+  .logo-img {
+    width: 60px;
+  }
+
+  .text {
+    font-size: 30px;
+    padding: 20px 10px;
+  }
+
+  .start {
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .start-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .context-right {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .logo-text {
+    font-size: 30px;
+  }
+
+  .logo-img {
+    width: 50px;
+  }
+
+  .text {
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  .start-btn {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+
+  .context-right {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,103 @@
+.login-options-container {
+  height: 100vh;
+  background-color: #b9cef0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #1d2c4d;
+}
+
+.login-buttons {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Expanding Box Container */
+.expanding-box {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.expanding-box.open {
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+
+/* Button Style */
+.login-btn {
+  width: 100%;
+  background-color: #1d2c4d;
+  color: white;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.expanding-box.open .login-btn {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Expanding Content */
+.expanding-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.expanding-box.open .expanding-content {
+  max-height: 400px;
+}
+
+/* Form Styles */
+.login-form-inner {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form-inner input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 10px;
+}
+
+.form-buttons button {
+  width: 48%;
+  padding: 10px;
+  font-weight: 600;
+  background-color: #1d2c4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

@@ -1,0 +1,21 @@
+/* postcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #b9cef0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

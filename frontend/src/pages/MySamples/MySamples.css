@@ -1,0 +1,97 @@
+.my-samples-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.my-samples-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 1.1px;
+}
+
+.samples-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.sample-card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+
+.sample-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.sample-card h3 {
+  font-size: 22px;
+  color: #34495e;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 6px;
+}
+
+.sample-card p {
+  margin: 6px 0;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #555;
+}
+
+.sample-card strong {
+  color: #2c3e50;
+}
+
+.loading-text {
+  font-size: 16px;
+  color: #2980b9;
+  font-weight: 600;
+  text-align: center;
+}
+
+.error-text {
+  color: #e74c3c;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+}
+
+.no-samples-text {
+  font-size: 16px;
+  color: #7f8c8d;
+  font-style: italic;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .my-samples-container {
+    padding: 15px 10px;
+  }
+
+  .sample-card {
+    padding: 15px;
+  }
+
+  .sample-card h3 {
+    font-size: 20px;
+  }
+
+  .sample-card p {
+    font-size: 14px;
+  }
+}

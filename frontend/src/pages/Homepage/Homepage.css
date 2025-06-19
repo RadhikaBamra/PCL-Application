@@ -1,0 +1,298 @@
+/* Homepage.css */
+
+/* Global styles */
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #f4f7fc;
+  color: #1d2c4d; /* Deep navy as primary text color */
+}
+
+/* Header Role Container */
+.homepage-container {
+  background: #b9cef0;
+  color: #1d2c4d;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Main Homepage Layout */
+.homepage {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Section Headings */
+.homepage section h1,
+.homepage section h2 {
+  color: #1d2c4d;
+  margin-bottom: 1rem;
+}
+
+/* Intro Section */
+.intro {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.intro h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* How It Works Section */
+.how-it-works {
+  background: #f4f7fc;
+  padding: 2rem;
+  border: 1px solid #b9cef0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.how-it-works ol {
+  margin-left: 1.5rem;
+}
+
+.how-it-works li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.how-it-works strong {
+  color: #1d2c4d;
+}
+
+/* Action Buttons in 'How It Works' */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.action-buttons button {
+  background: #b9cef0;
+  color: #1d2c4d;
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.action-buttons button:hover {
+  background: #1d2c4d;
+  color: #fff;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.why-choose-us ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-choose-us li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.why-choose-us strong {
+  color: #1d2c4d;
+}
+
+/* Sample Types Section */
+.sample-types {
+  background: #f4f7fc;
+  padding: 2rem;
+  border: 1px solid #b9cef0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.samples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.sample-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.sample-card h3 {
+  color: #1d2c4d;
+  margin-bottom: 0.75rem;
+}
+
+.sample-card:hover {
+  background-color: #e0ebf9; /* A subtle light blue on hover */
+  transition: background-color 0.3s ease;
+}
+
+/* Primary Button in Sample Types */
+.sample-types .primary {
+  background: #1d2c4d;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  display: block;
+  margin: 2rem auto 0 auto;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sample-types .primary:hover {
+  background: #15203a;
+}
+
+/* Expert Panel Section */
+.expert-panel {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.expert-panel p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.expert-panel button {
+  background: #b9cef0;
+  color: #1d2c4d;
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.expert-panel button:hover {
+  background: #1d2c4d;
+  color: #fff;
+}
+
+/* Updates Section */
+.updates {
+  background: #f4f7fc;
+  padding: 2rem;
+  border: 1px solid #b9cef0;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.updates ul {
+  list-style: none;
+  padding: 0;
+}
+
+.updates li {
+  margin-bottom: 1rem;
+}
+
+.updates strong {
+  color: #1d2c4d;
+}
+
+.read-more-btn {
+  background: #b9cef0;
+  color: #1d2c4d;
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.read-more-btn:hover {
+  background: #1d2c4d;
+  color: #fff;
+}
+
+/* Trusted By Section */
+.trusted-by {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.trusted-by .partners {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.trusted-by .partners span {
+  background: #b9cef0;
+  color: #1d2c4d;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Contact Call-to-Action Section */
+.contact-cta {
+  background: #f4f7fc;
+  padding: 2rem;
+  border: 1px solid #b9cef0;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-cta a {
+  color: #1d2c4d;
+  text-decoration: underline;
+}
+
+.contact-cta p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .homepage {
+    padding: 0 1rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

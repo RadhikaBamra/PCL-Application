@@ -1,0 +1,414 @@
+.navbar {
+  background-color: #f4f7fc;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.navbar-left h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 0;
+  padding-left: 0px;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1d2c4d;
+  transition: color 0.2s ease;
+}
+
+.navbar-menu li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  height: 2px;
+  width: 80%;
+  background-color: #1d2c4d;
+  transition: transform 0.3s ease;
+  border-radius: 1px;
+}
+
+.navbar-menu li:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-right ul {
+  list-style: none;
+  font-weight: 500;
+  color: #1d2c4d;
+  cursor: pointer;
+  margin: 0;
+}
+
+.navbar-right ul:hover {
+  text-decoration: underline;
+}
+
+.navbar-welcome {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  white-space: nowrap;
+}
+
+.navbar-right img {
+  height: 36px;
+  width: 36px;
+  object-fit: cover;
+}
+
+.navbar-right img:hover {
+  cursor: pointer;
+}
+
+.navbar-divider {
+  width: 2px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 25%;
+}
+
+.navbar-menu .dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  border-radius: 4px;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+  white-space: nowrap;
+  color: #1d2c4d;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: #1d2c4d;
+  color: white;
+}
+
+.navbar-menu .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar-menu > li.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  border-radius: 6px;
+  list-style: none; /* Removes bullet points */
+  margin: 0;
+  min-width: 100%; /* Makes dropdown same width as parent */
+  text-align: center; /* Centers text inside */
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+  color: #1d2c4d;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.dropdown-menu li:hover {
+  background-color: #1d2c4d;
+  color: white;
+}
+
+.navbar-menu .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Remove underline animation from dropdown items */
+.dropdown-menu li::after {
+  display: none !important;
+}
+
+/* Existing styles remain unchanged above... */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .navbar {
+    padding-right: 10px;
+  }
+
+  .navbar-menu {
+    gap: 20px;
+  }
+
+  .navbar-left h1 {
+    font-size: 32px;
+  }
+
+  .navbar-menu li {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 16px;
+  }
+
+  .navbar-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .navbar-left h1 {
+    font-size: 28px;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .navbar-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  .navbar-divider {
+    display: none;
+  }
+
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0;
+    min-width: 100%;
+  }
+
+  .dropdown-menu li {
+    padding: 8px 0;
+  }
+
+  .navbar-menu .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .logo {
+    height: 48px;
+  }
+
+  .navbar-left h1 {
+    font-size: 24px;
+  }
+
+  .navbar-menu li {
+    font-size: 0.9rem;
+  }
+
+  .navbar-welcome {
+    font-size: 0.9rem;
+  }
+
+  .navbar-right img {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+/* Custom fix for layout adjustment under 768px width */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-left {
+    order: 1;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar-menu {
+    order: 3;
+    width: 100%;
+  }
+
+  .navbar-right {
+    order: 2;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+  }
+
+  .navbar-welcome {
+    display: none;
+  }
+}
+
+/* Remove underline animation from dropdown triggers and items */
+.navbar-menu > li.dropdown::after,
+.dropdown-menu li::after {
+  display: none !important;
+}
+
+/* Even smaller screens (optional) */
+@media (max-width: 480px) {
+  .navbar-left h1 {
+    font-size: 22px;
+  }
+
+  .navbar-right img {
+    height: 28px;
+    width: 28px;
+  }
+
+  .navbar-menu li {
+    font-size: 0.85rem;
+  }
+}
+
+/* === Notification Styles === */
+
+.notification-wrapper {
+  position: relative;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.notification-icon {
+  height: 25px;
+  width: 25px;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: red;
+  color: white;
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.notification-menu {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.notification-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.95rem;
+  color: #1d2c4d;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.notification-unread {
+  background-color: #e6f0ff;
+}
+
+.notification-read {
+  background-color: white;
+}
+
+.notification-item:hover {
+  background-color: white;
+}
+
+.notification-empty {
+  padding: 10px;
+  text-align: center;
+  color: #666;
+}

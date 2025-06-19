@@ -1,0 +1,145 @@
+.sample-details-container {
+  max-width: 95%;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #eef4fc;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: #15203a;
+}
+
+.sample-card {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 48px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #d7e3f3;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center content horizontally */
+}
+
+.sample-code {
+  margin-bottom: 35px;
+  font-size: 26px;
+  color: #1d2c4d;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-align: center;
+  width: 100%;
+}
+
+.fields-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 700px;
+  align-items: center; /* center the entire container */
+}
+
+/* Each field row: horizontal flex container */
+.field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  width: 100%;
+  max-width: 480px; /* constrain max width to center the group */
+  justify-content: flex-start; /* left align label + value inside limited width */
+}
+
+/* Label with fixed width */
+.field label {
+  font-weight: 600;
+  color: #1d2c4d;
+  min-width: 140px;
+  white-space: nowrap;
+  margin: 0;
+  text-align: right;
+}
+
+/* Text/links inline next to label */
+.field p,
+.field a {
+  margin: 0;
+  color: #1a1a1a;
+  text-decoration: none;
+  text-align: left;
+  flex-grow: 1;
+}
+
+/* Inputs and selects inline */
+.field select,
+.field input[type="file"] {
+  font-size: 15px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #c3d4e8;
+  background-color: #f9fbff;
+  color: #1a1a1a;
+  transition: 0.2s ease;
+  max-width: 300px;
+  margin: 0;
+}
+
+.field select:focus,
+.field input[type="file"]:focus {
+  border-color: #80aaff;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.update-button {
+  margin-top: 30px;
+  padding: 14px 26px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #005fcc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.update-button:hover {
+  background-color: #004bb5;
+}
+
+.message {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .fields-container {
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .field {
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+
+  .field label {
+    min-width: 110px;
+  }
+
+  .field select,
+  .field input[type="file"] {
+    max-width: 100%;
+  }
+
+  .update-button {
+    width: 100%;
+  }
+}

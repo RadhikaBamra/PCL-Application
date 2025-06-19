@@ -1,0 +1,227 @@
+.sample-management-container {
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 12px;
+  padding: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #15203a;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sample-management-container h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1d2c4d;
+}
+
+.sample-card {
+  width: 100%;
+  max-width: 550px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #f0f4fa;
+  border: 1px solid #b9cef0;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.sample-card:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.sample-card h3 {
+  margin: 0 0 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #1d2c4d;
+  font-weight: 700;
+  border-bottom: 2px solid #1d8be0;
+  padding-bottom: 6px;
+  display: inline-block;
+}
+
+.sample-info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sample-info strong {
+  text-align: right;
+  color: #1d2c4d;
+  font-weight: 600;
+}
+
+.sample-info span {
+  text-align: left;
+}
+
+.form-section {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sample-card label {
+  font-weight: 600;
+  color: #1d2c4d;
+  font-size: 15px;
+}
+
+.sample-card input[type="text"] {
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #b9cef0;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #15203a;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.sample-card input[type="text"]:focus {
+  border-color: #1d2c4d;
+  box-shadow: 0 0 0 3px rgba(29, 44, 77, 0.15);
+  outline: none;
+}
+
+.lab-assignment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.lab-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap; /* Responsive */
+}
+
+.lab-label {
+  font-weight: 600;
+  color: #1d2c4d;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.lab-select {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #b9cef0;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #15203a;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 180px;
+  height: 40px; /* force consistent height */
+}
+
+.lab-select:focus {
+  border-color: #1d2c4d;
+  box-shadow: 0 0 0 3px rgba(29, 44, 77, 0.15);
+  outline: none;
+}
+
+.update-button {
+  background-color: #1d2c4d;
+  color: white;
+  padding: 10px 16px;
+  font-size: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+  height: 40px; /* force consistent height */
+}
+
+.update-button:hover {
+  background-color: #162039;
+}
+
+.trashcan-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.trashcan-icon:hover {
+  transform: scale(1.1);
+}
+
+.delete-button {
+  margin-top: 30px;
+  background-color: #b5415c;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.delete-button:hover {
+  background-color: #a80000;
+}
+
+.loading-text,
+.error-text {
+  text-align: center;
+  font-size: 18px;
+  color: #15203a;
+  margin-top: 40px;
+}
+
+.error-text {
+  color: #b5415c;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .sample-card {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .sample-card input[type="text"],
+  .lab-select,
+  .update-button {
+    width: 100%;
+  }
+
+  .lab-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lab-assignment-container {
+    gap: 10px;
+  }
+
+  .delete-button {
+    width: 100%;
+  }
+}
