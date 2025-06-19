@@ -31,7 +31,7 @@ const IntroductionPage = () => {
           </div>
         </div>
         <div className="context-right">
-          At Pollution Control Lab (PCB), we provide comprehensive environmental
+          At Pollution Control Lab (PCL), we provide comprehensive environmental
           testing services to help monitor and manage pollution levels
           effectively. Simply submit your air, water, or soil samples through
           our secure platform, and our certified laboratory will analyze them
