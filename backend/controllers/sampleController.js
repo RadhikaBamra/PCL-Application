@@ -177,28 +177,32 @@ exports.updateAssignedLab = async (req, res) => {
   }
 };
 
+const fs = require("fs");
+const path = require("path");
+
 exports.deleteSample = async (req, res) => {
   try {
     const sampleId = req.params.id;
+
     const sample = await Sample.findById(sampleId);
-    if (!sample) return res.status(404).json({ message: "Sample not found" });
+    if (!sample) {
+      return res.status(404).json({ message: "Sample not found" });
+    }
 
     if (sample.report) {
-      const reportPath = path.join(__dirname, "..", "uploads", sample.report);
+      const reportPath = path.join(__dirname, "..", sample.report);
       fs.unlink(reportPath, (err) => {
         if (err) {
-          console.error("⚠️ Failed to delete report file:", err.message);
-        } else {
-          console.log("✅ Report file deleted:", sample.report);
+          // File might already be missing — log suppression to avoid noise
         }
       });
     }
 
     await Sample.deleteOne({ _id: sampleId });
+
     res.json({ message: "Sample deleted" });
   } catch (err) {
-    console.error("Error deleting sample:", err);
-    res.status(500).json({ message: "Server error!" });
+    res.status(500).json({ message: "Server error!", error: err.message });
   }
 };
 
