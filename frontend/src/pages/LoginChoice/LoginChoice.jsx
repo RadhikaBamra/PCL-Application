@@ -8,6 +8,7 @@ const LoginForm = ({ type }) => {
   const { setUser } = useUser();
   const navigate = useNavigate();
   const [isSignup, setIsSignup] = useState(false);
+  const [passwordMismatch, setPasswordMismatch] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -20,7 +21,16 @@ const LoginForm = ({ type }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const updatedData = { ...formData, [name]: value };
+
+    setFormData(updatedData);
+
+    if (isSignup && (name === "password" || name === "confirmPassword")) {
+      setPasswordMismatch(
+        updatedData.confirmPassword &&
+          updatedData.password !== updatedData.confirmPassword
+      );
+    }
   };
 
   const handleLogin = async () => {
@@ -36,7 +46,6 @@ const LoginForm = ({ type }) => {
       password: formData.password,
       role: type,
     });
-    console.log("Before try/axios - about to call backend");
 
     try {
       const response = await axios.post(
@@ -53,10 +62,11 @@ const LoginForm = ({ type }) => {
       if (response.data.success) {
         alert("Login successful");
 
-        // Save token to localStorage
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("role", response.data.role);
         localStorage.setItem("fullName", response.data.fullName);
+
+        const userRole = response.data.role.toLowerCase();
 
         setUser({
           fullName: response.data.fullName,
@@ -67,7 +77,11 @@ const LoginForm = ({ type }) => {
           rollNumber: response.data.rollNumber,
         });
 
-        navigate("/home");
+        if (userRole === "admin" || userRole === "scientist") {
+          navigate("/dashboard");
+        } else {
+          navigate("/home");
+        }
       } else {
         alert(response.data.message || "Login failed");
       }
@@ -170,13 +184,21 @@ const LoginForm = ({ type }) => {
             value={formData.password}
             onChange={handleInputChange}
           />
-          <input
-            type="password"
-            name="confirmPassword"
-            placeholder="Re-enter Password"
-            value={formData.confirmPassword}
-            onChange={handleInputChange}
-          />
+          <div className="confirm-password-wrapper">
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Re-enter Password"
+              value={formData.confirmPassword}
+              onChange={handleInputChange}
+              className={passwordMismatch ? "input-error" : ""}
+            />
+            {passwordMismatch && (
+              <p className="password-mismatch-warning">
+                Passwords do not match
+              </p>
+            )}
+          </div>
 
           {type === "User" && (
             <input

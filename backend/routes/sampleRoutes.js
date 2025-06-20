@@ -76,11 +76,6 @@ router.put(
   updateAssignedLab
 );
 
-router.delete(
-  "/samples/:id",
-  authenticateUser,
-  requireRole(["admin"]),
-  deleteSample
-);
+router.delete("/:id", authenticateUser, requireRole(["admin"]), deleteSample);
 
 module.exports = router;

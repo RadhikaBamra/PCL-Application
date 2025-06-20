@@ -44,6 +44,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible;
+  height: 300px;
 }
 
 .dashboard-loading {

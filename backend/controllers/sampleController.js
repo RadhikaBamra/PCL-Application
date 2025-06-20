@@ -226,6 +226,7 @@ exports.getDashboardStats = async (req, res) => {
     const statusBreakdown = {};
     const samplesPerUserMap = {};
     const samplesOverTimeMap = {};
+    const emailSet = new Set();
 
     for (const sample of allSamples) {
       if (sample.type) {
@@ -252,6 +253,7 @@ exports.getDashboardStats = async (req, res) => {
       if (sample.submittedBy) {
         samplesPerUserMap[sample.submittedBy] =
           (samplesPerUserMap[sample.submittedBy] || 0) + 1;
+        emailSet.add(sample.submittedBy);
       }
 
       const dateKey = sample.createdAt?.toISOString().split("T")[0];
@@ -260,10 +262,23 @@ exports.getDashboardStats = async (req, res) => {
       }
     }
 
+    // Step: Get first names for all collected emails
+    const emailToNameMap = {};
+    const users = await User.find({ email: { $in: Array.from(emailSet) } });
+
+    users.forEach((user) => {
+      const firstName = user.fullName.split(" ")[0];
+      emailToNameMap[user.email] = firstName;
+    });
+
     const samplesPerUser = Object.entries(samplesPerUserMap).map(
-      ([email, count]) => ({ email, count })
+      ([email, count]) => ({
+        name: emailToNameMap[email] || email,
+        count,
+      })
     );
-    const topContributors = samplesPerUser
+
+    const topContributors = [...samplesPerUser]
       .sort((a, b) => b.count - a.count)
       .slice(0, 5);
 
@@ -277,7 +292,8 @@ exports.getDashboardStats = async (req, res) => {
       .map((s) => ({
         sampleCode: s.sampleCode,
         type: s.type,
-        submittedBy: s.submittedBy,
+        submittedBy:
+          emailToNameMap[s.submittedBy] || s.submittedBy || "Unknown",
         submittedOn: s.createdAt,
       }));
 

@@ -89,6 +89,13 @@ const NavBar = () => {
       </div>
 
       <ul className="navbar-menu">
+        {role === "User" && (
+          <>
+            <li onClick={goToHomepage}>Home</li>
+            <div className="navbar-divider" />
+          </>
+        )}
+
         <li onClick={submitPageRedirect}>Submit Sample</li>
         <div className="navbar-divider" />
         <li className="dropdown">

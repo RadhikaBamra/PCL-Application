@@ -101,3 +101,25 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
+.confirm-password-wrapper {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.confirm-password-wrapper input {
+  width: 100%;
+}
+
+.input-error {
+  border: 1px solid #e53935 !important;
+}
+
+.password-mismatch-warning {
+  color: #e53935;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  margin-left: 2px;
+}

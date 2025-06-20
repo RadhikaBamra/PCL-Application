@@ -22,7 +22,7 @@ const SamplesPerUserBar = ({ data }) => {
   }
 
   const chartData = data.map((item) => ({
-    email: item.email,
+    name: item.name,
     count: item.count,
   }));
 
@@ -37,7 +37,7 @@ const SamplesPerUserBar = ({ data }) => {
           margin={{ top: 10, right: 30, left: 10, bottom: 50 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="email" angle={-30} textAnchor="end" interval={0} />
+          <XAxis dataKey="name" angle={-30} textAnchor="end" interval={0} />
           <YAxis />
           <Tooltip />
           <Bar dataKey="count" fill="#60a5fa" />
